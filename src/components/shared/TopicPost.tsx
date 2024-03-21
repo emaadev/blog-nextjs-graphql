@@ -15,15 +15,17 @@ const TopicPost = ({ data }: TopicPostPros) => {
       <Image
         src={data.image.url}
         className={styles.image}
-        width={250}
-        height={250}
+        width={1080}
+        height={1080}
         alt=""
       />
 
       <div className={styles.imageCover} />
 
       <div className={styles.postContent}>
-        <h4>{data.title}</h4>
+        <div className={styles.newPost}>New Post</div>
+
+        <h3>{data.title}</h3>
         <p>{data.description}</p>
         <Link href={`/${data.id}`} target="_blank" rel="noopener noreferrer">
           Read More

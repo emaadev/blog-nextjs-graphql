@@ -1,13 +1,13 @@
 import Head from "next/head";
-import { Bricolage_Grotesque } from "next/font/google";
+import { Montserrat } from "next/font/google";
 
-import { Hero, FeaturedPosts } from "@/components";
+import { Hero, FeaturedPosts, PostList } from "@/components";
 
-import { Post, getPosts } from "@/lib/getPosts";
+import { getPosts } from "@/lib/getPosts";
 
-const bricolageGrotesque = Bricolage_Grotesque({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 interface HomeProps {
@@ -20,7 +20,7 @@ export default function Home({ posts }: HomeProps) {
   );
 
   return (
-    <main className={bricolageGrotesque.className}>
+    <main className={montserrat.className}>
       <Head>
         <title>Web Development Official Blog</title>
         <meta name="description" content="Created by @emaadev" />
@@ -30,6 +30,7 @@ export default function Home({ posts }: HomeProps) {
 
       <Hero />
       <FeaturedPosts data={featuredPosts} />
+      <PostList data={posts} />
     </main>
   );
 }

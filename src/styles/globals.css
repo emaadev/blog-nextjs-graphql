@@ -12,3 +12,41 @@ body,
 body {
     background-color: var(--primary-background-color);
 }
+.main-section {
+    padding: 50px 20px;
+}
+
+/* SectionTitle Classes */
+.section-title__container {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.section-title__title {
+    font-size: 40px;
+    font-weight: 500;
+    z-index: 10;
+}
+
+.section-title__container svg {
+    width: 30px;
+    height: 30px;
+
+    color: #2560cc;
+}
+
+/* .section-title__line {
+    position: absolute;
+    width: 90%;
+    height: 10px;
+    bottom: 0;
+
+    background-color: #8cb4ff;
+    z-index: 1;
+} */
+
+/* --- */

@@ -1,6 +1,4 @@
-import TopicPost from "@/components/shared/TopicPost";
-
-import { Post } from "@/lib/getPosts";
+import { TopicPost, SectionTitle } from "@/components";
 
 import styles from "@/styles/FeaturedPosts.module.css";
 import { IoStarHalf } from "react-icons/io5";
@@ -11,11 +9,10 @@ interface FeaturedPostsProps {
 
 const FeaturedPosts = ({ data }: FeaturedPostsProps) => {
   return (
-    <section className={styles.sectionContainer}>
-      <div className={styles.headerContainer}>
-        <h1 className={styles.title}>Editor&apos;s Choice</h1>
+    <section className="main-section">
+      <SectionTitle title="Editor's Choice">
         <IoStarHalf />
-      </div>
+      </SectionTitle>
 
       <article className={styles.articleContainer}>
         {data.map((post: any) => (
