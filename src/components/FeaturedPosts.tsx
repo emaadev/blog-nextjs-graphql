@@ -7,7 +7,7 @@ interface FeaturedPostsProps {
 }
 
 const FeaturedPosts = ({ data }: FeaturedPostsProps) => {
-  console.log(data);
+
   return (
     <section>
       <h1>FeaturedPosts</h1>

@@ -9,6 +9,7 @@ const TopicPost = ({ data }: TopicPostPros) => {
     <div>
       <Image src={data.image.url} width={250} height={250} alt="" />
       <h4>{data.title}</h4>
+      <p>{data.description}</p>
     </div>
   );
 };
