@@ -17,7 +17,7 @@ const TopicPost = ({ data }: TopicPostPros) => {
         className={styles.image}
         width={1080}
         height={1080}
-        alt=""
+        alt={data.title}
       />
 
       <div className={styles.imageCover} />
@@ -27,7 +27,7 @@ const TopicPost = ({ data }: TopicPostPros) => {
 
         <h3>{data.title}</h3>
         <p>{data.description}</p>
-        <Link href={`/${data.id}`} target="_blank" rel="noopener noreferrer">
+        <Link href={`/post/${data.slug}`}>
           Read More
           <IoIosArrowRoundForward />
         </Link>

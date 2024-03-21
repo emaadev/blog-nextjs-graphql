@@ -1,43 +1,12 @@
 import { request, gql } from "graphql-request";
 
+import { Post } from "@/interfaces/data";
+
 // If the MASTER READ/WRITE endpoint is not available,
 // then use the PUBLIC ONLY READ endpoint
 const hygraphAPI =
   process.env.HYGRAPH_MASTER_ENDPOINT ||
   "https://sa-east-1.cdn.hygraph.com/content/cltyc5f86014a07w6j2qnu40l/master";
-
-// Interface for the Posts fetched
-export interface Post {
-  slug: string;
-  createdAt: string;
-  description: string;
-  id: string;
-  publicationDate: string;
-  creator: {
-    id: string;
-    name: string;
-    username: string;
-    profileImage: {
-      url: string;
-    };
-    posts: {
-      id: string;
-      title: string;
-      description: string;
-      image: {
-        url: string;
-      };
-    }[];
-  };
-  title: string;
-  textContent: {
-    html: string;
-  };
-  image: {
-    url: string;
-  };
-  featuredPost: boolean;
-}
 
 interface PostsConnection {
   postsConnection: {

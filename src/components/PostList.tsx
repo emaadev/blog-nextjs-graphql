@@ -8,8 +8,6 @@ interface PostListProps {
 }
 
 const PostList = ({ data }: PostListProps) => {
-  console.log();
-
   return (
     <section className="main-section">
       <SectionTitle title="See All Posts">
@@ -18,13 +16,14 @@ const PostList = ({ data }: PostListProps) => {
 
       <article className={styles.articleContainer}>
         {data.map((post: any) => (
-          <div key={post.id}>
+          <div key={post.node.id}>
             <PostCard
               image={post.node.image.url}
               title={post.node.title}
               description={post.node.description}
               creator={post.node.creator.username}
               postDate={post.node.createdAt}
+              slug={post.node.slug}
             />
           </div>
         ))}

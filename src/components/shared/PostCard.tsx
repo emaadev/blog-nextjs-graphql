@@ -12,6 +12,7 @@ interface PostCardProps {
   description: string;
   creator: string;
   postDate: string;
+  slug: string;
 }
 
 const PostCard = ({
@@ -20,6 +21,7 @@ const PostCard = ({
   description,
   creator,
   postDate,
+  slug,
 }: PostCardProps) => {
   return (
     <div className={styles.postContainer}>
@@ -32,7 +34,7 @@ const PostCard = ({
       <h4>{title}</h4>
       <p>{description}</p>
 
-      <Link href="/">Read Post</Link>
+      <Link href={`/post/${slug}`}>Read Post</Link>
     </div>
   );
 };
