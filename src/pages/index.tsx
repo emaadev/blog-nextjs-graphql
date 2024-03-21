@@ -1,13 +1,13 @@
 import Head from "next/head";
-import { Poppins } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
 
 import { Hero, FeaturedPosts } from "@/components";
 
 import { Post, getPosts } from "@/lib/getPosts";
 
-const poppins = Poppins({
+const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400"],
 });
 
 interface HomeProps {
@@ -20,7 +20,7 @@ export default function Home({ posts }: HomeProps) {
   );
 
   return (
-    <main className={poppins.className}>
+    <main className={bricolageGrotesque.className}>
       <Head>
         <title>Web Development Official Blog</title>
         <meta name="description" content="Created by @emaadev" />

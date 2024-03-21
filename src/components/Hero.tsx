@@ -8,15 +8,12 @@ import styles from "@/styles/Hero.module.css";
 
 const Hero = () => {
   return (
-    <section className={styles.mainSection}>
+    <section className={styles.sectionContainer}>
       <header className={styles.headerContainer}>
         <h1 className={styles.title}>
           Do you want to study code? <br /> <span>Here we are!</span>
         </h1>
         <div className={styles.underline} />
-        <p className={styles.subtitle}>
-          The perfect blog to boost your IT Career 🚀
-        </p>
       </header>
 
       <div className={styles.searchBarContainer}>

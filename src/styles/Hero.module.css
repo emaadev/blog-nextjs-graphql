@@ -1,4 +1,4 @@
-.mainSection {
+.sectionContainer {
     width: 100%;
     position: relative;
     padding: 100px 0px 250px 0px;
@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(to top, #efefef, #fff);
+    background: linear-gradient(to top, #e9f1ff, #fff);
 }
 
 .headerContainer {
@@ -32,7 +32,7 @@
     background-color: #fff;
     color: #7b7b7b;
     font-weight: 200;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .searchBar>svg {
@@ -41,17 +41,26 @@
 }
 
 .title {
-    font-size: 35px;
+    font-size: 23px;
     line-height: 35px;
-    font-weight: 700;
+    font-weight: 300;
     margin-bottom: 15px;
+    font-style: italic;
 }
 
+.title span {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    font-style: normal;
+    font-style: italic;
+    letter-spacing: 2px;
+}
 .underline {
     position: absolute;
-    width: 230px;
-    height: 10px;
-    bottom: 32%;
+    width: 270px;
+        height: 3px;
+        bottom: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
 
