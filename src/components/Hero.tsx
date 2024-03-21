@@ -2,11 +2,15 @@ import Image from "next/image";
 
 import leftImage from "/public/left-hero-img.png";
 import rightImage from "/public/right-hero-img.png";
-import { BiSearchAlt } from "react-icons/bi";
 
 import styles from "@/styles/Hero.module.css";
+import SearchBar from "./shared/SearchBar";
 
-const Hero = () => {
+interface HeroProps {
+  data: any;
+}
+
+const Hero = ({ data }: HeroProps) => {
   return (
     <section className={styles.sectionContainer}>
       <header className={styles.headerContainer}>
@@ -16,12 +20,7 @@ const Hero = () => {
         <div className={styles.underline} />
       </header>
 
-      <div className={styles.searchBarContainer}>
-        <div className={styles.searchBar}>
-          <BiSearchAlt />
-          Find the blog you are looking for...
-        </div>
-      </div>
+      <SearchBar data={data} />
 
       <div className={styles.imagesContainer}>
         <Image

@@ -1,0 +1,91 @@
+.searchBarContainer {
+    position: relative;
+    width: 300px;
+    margin-bottom: 30px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    gap: 10px;
+    z-index: 990;
+
+    background-color: #fff;
+    color: #7b7b7b;
+    font-weight: 200;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.searchBar {
+    width: 80%;
+    padding: 10px 0;
+    border-radius: 50px;
+
+    background-color: #fff;
+    color: #7b7b7b;
+    font-weight: 200;
+}
+
+.searchBar>svg {
+    width: 20px;
+    height: 20px;
+}
+
+.searchedPosts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: absolute;
+    padding: 10px 20px;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 10px;
+
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+.searchedPosts .searchedPost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border-bottom: 1px solid #dcdcdc;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all .5s;
+    animation-delay: 1s;
+
+    color: #000;
+}
+
+.searchedPosts .searchedPost:hover {
+    background-color: #dcdcdc;
+}
+
+.searchedPosts .searchedPost img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+/* Media Queries */
+@media (min-width: 760px) {
+    .searchBarContainer {
+        width: 400px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .searchBarContainer {
+        width: 500px;
+    }
+}

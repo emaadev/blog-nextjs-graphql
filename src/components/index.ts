@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import TopicPost from "./shared/TopicPost";
 import SectionTitle from "./shared/SectionTitle";
 import PostCard from "./shared/PostCard";
+import SearchBar from "./shared/SearchBar";
 
 export {
   Navbar,
@@ -15,4 +16,5 @@ export {
   PostList,
   PostCard,
   SectionTitle,
+  SearchBar,
 };

@@ -28,7 +28,7 @@ export default function Home({ posts }: HomeProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Hero />
+      <Hero data={posts} />
       <FeaturedPosts data={featuredPosts} />
       <PostList data={posts} />
     </main>
