@@ -5,12 +5,13 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    margin: auto;
 }
 
 .postContainer {
     position: relative;
-    width: 500px;
-    height: 400px;
+    width: 300px;
+        height: 400px;
     transition: all 1s;
 }
 
@@ -44,7 +45,7 @@
 .postContent {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     width: 80%;
-    padding: 40px;
+    padding: 20px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -74,11 +75,11 @@
 }
 
 .postContent h3 {
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 600;
     letter-spacing: 2px;
     margin-bottom: 10px;
-    line-height: 35px;
+    line-height: 30px;
 
     color: #fff;
 }
@@ -137,3 +138,15 @@
 }
 
 /* --- */
+/* Media Queries */
+@media (min-width: 760px) {
+    .postContainer {
+        width: 350px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .postContainer {
+        width: 400px;
+    }
+}
