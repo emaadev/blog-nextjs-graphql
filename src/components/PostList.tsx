@@ -9,7 +9,7 @@ interface PostListProps {
 
 const PostList = ({ data }: PostListProps) => {
   return (
-    <section className="main-section">
+    <section id="allPosts" className="main-section">
       <SectionTitle title="See All Posts">
         <TbCardsFilled />
       </SectionTitle>
