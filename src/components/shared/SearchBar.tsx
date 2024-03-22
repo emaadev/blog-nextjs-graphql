@@ -17,6 +17,9 @@ const SearchBar = ({ data }: SearchBarProps) => {
     setSearchPost(e.target.value);
   };
 
+  // Receive all the posts and then filter the lowercase titles
+  // of each post and analyze if it includes the text that
+  // is enter in lowercase through the input
   const searchedPosts = data.filter((post: any) =>
     post.node.title.toLowerCase().includes(searchPost.toLowerCase())
   );

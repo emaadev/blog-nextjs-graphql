@@ -1,8 +1,8 @@
-// lib/getPaginatedPosts.ts
-
 import { request, gql } from "graphql-request";
 import { PaginatedPost } from "@/interfaces/data";
 
+// If the MASTER READ/WRITE endpoint is not available,
+// then use the PUBLIC ONLY READ endpoint
 const hygraphAPI =
   process.env.HYGRAPH_MASTER_ENDPOINT ||
   "https://sa-east-1.cdn.hygraph.com/content/cltyc5f86014a07w6j2qnu40l/master";
@@ -10,6 +10,7 @@ const hygraphAPI =
 interface PostsConnection {
   postsConnection: {
     edges: {
+      // I added the "x" property to use it as a key for the pagination
       [x: string]: any;
       node: PaginatedPost;
     };

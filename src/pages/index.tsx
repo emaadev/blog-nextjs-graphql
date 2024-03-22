@@ -31,7 +31,7 @@ export default function Home({ posts }: HomeProps) {
 
         <Hero data={posts} />
         <FeaturedPosts data={featuredPosts} />
-        <PostList data={posts} />
+        <PostList />
         <Footer />
       </Layout>
     </main>

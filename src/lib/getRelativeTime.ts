@@ -1,3 +1,5 @@
+// I get the date of publication of each post and create a function,
+// that returns the relative time based on the current date of the publication.
 const getRelativeTime = (isoTimeString: string) => {
   const time = new Date(isoTimeString);
   const now = new Date();

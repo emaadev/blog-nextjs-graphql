@@ -1,3 +1,4 @@
+// Interface for the main structure of the post
 export interface Post {
   slug: string;
   createdAt: string;
@@ -30,6 +31,7 @@ export interface Post {
   featuredPost: boolean;
 }
 
+// Interface for PostList Pagination
 export interface PaginatedPost {
   id: string;
   title: string;
