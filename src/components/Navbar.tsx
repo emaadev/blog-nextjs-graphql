@@ -1,4 +1,3 @@
-import styles from "@/styles/Navbar.module.css";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -9,7 +8,7 @@ const Navbar = () => {
         {"}"} The Code Theory.
       </Link>
 
-      <Link href="#allPosts" className="logo">
+      <Link href="/#allPosts" className="logo">
         See All Posts
       </Link>
     </nav>
