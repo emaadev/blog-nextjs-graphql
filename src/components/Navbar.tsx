@@ -13,14 +13,14 @@ const Navbar = () => {
           See All Posts
         </Link>
 
-        <Link
+        {/* <Link
           href="https://emanuel-nunez.vercel.app"
           target="_blank"
           rel="noreferrer"
           className="logo"
         >
           Portfolio
-        </Link>
+        </Link> */}
       </div>
     </nav>
   );

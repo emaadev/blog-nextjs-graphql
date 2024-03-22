@@ -5,8 +5,8 @@ import { getPostBySlug } from "@/lib/getPostBySlug";
 import { getAllPostsBySlugs } from "@/lib/getAllPostsBySlugs";
 import getRelativeTime from "@/lib/getRelativeTime";
 
-import styles from "@/styles/PostPage.module.css";
 import { BsClock } from "react-icons/bs";
+import styles from "@/styles/PostPage.module.css";
 
 export default function PostPage({ post }: any) {
   const router = useRouter();

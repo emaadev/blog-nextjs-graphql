@@ -1,7 +1,9 @@
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 import Hero from "./Hero";
 import FeaturedPosts from "./FeaturedPosts";
 import PostList from "./PostList";
-import Navbar from "./Navbar";
+import Layout from "./Layout";
 
 import TopicPost from "./shared/TopicPost";
 import SectionTitle from "./shared/SectionTitle";
@@ -10,6 +12,7 @@ import SearchBar from "./shared/SearchBar";
 
 export {
   Navbar,
+  Footer,
   Hero,
   FeaturedPosts,
   TopicPost,
@@ -17,4 +20,5 @@ export {
   PostCard,
   SectionTitle,
   SearchBar,
+  Layout,
 };
