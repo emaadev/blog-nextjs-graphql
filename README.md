@@ -84,9 +84,14 @@ This project showcases several notable achievements in web development using Nex
 
 -   Utilized `getStaticProps` to fetch blog post data at build time, resulting in faster page loads and improved SEO.
 
-### 2. **Dynamic Routing with `getStaticPaths`:**
+### 2. **Dynamic Routing with `getStaticPaths` and Slugs:**
 
 -   Implemented `getStaticPaths` to generate static pages for each blog post using dynamic routes, enabling efficient navigation and access to individual posts.
+-   This approach enhances the user experience and SEO, as slugs are usually more descriptive and easier to remember than numerical IDs. Additionally, slugs can be beneficial for SEO because they allow for the inclusion of relevant keywords in the URL of each page.
+
+To achieve this, I utilize Next.js's dynamic routing system, where files in the 'pages' directory can have file names that start with brackets, like '[slug].tsx'. This indicates that the file represents a dynamic route, and the value of the slug can be accessed through the 'query' object provided by Next.js in the 'getStaticProps' or 'getServerSideProps' functions.
+
+Behind the scenes, when a request is made to a dynamic page, Next.js looks for the corresponding file in the 'pages' directory and uses the slug value to retrieve specific data for that page, such as the content of the post or product information. This data is then used to render the page with the appropriate content.
 
 ### 3. **Infinite Scrolling:**
 
