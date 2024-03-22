@@ -45,3 +45,24 @@ export interface PaginatedPost {
     username: string;
   };
 }
+
+// Interface for each Creator
+export interface Creator {
+  id: string;
+  name: string;
+  username: string;
+  profileImage: {
+    url: string
+  }
+  posts: {
+    filter: any;
+    map: any;
+    id: string
+    title: string
+    description: string
+    image: {
+      url: string
+    }
+    slug: string
+  }
+}
