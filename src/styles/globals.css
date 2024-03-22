@@ -21,7 +21,7 @@ body {
     top: 0;
     left: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 10px 10px;
     z-index: 999;
@@ -30,6 +30,9 @@ body {
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
+.navbar-container a {
+    display: block;
+}
 .navbar-container .logo {
     font-size: 13px;
     font-family: "Montserrat";
@@ -45,12 +48,12 @@ body {
     opacity: .7;
 }
 
-.navbar-links {
-    margin-right: 70px;
+/* .navbar-links {
     text-align: right;
     display: flex;
     gap: 30px;
 }
+*/
 /* --- */
 .main-section {
     display: flex;
@@ -112,7 +115,6 @@ body {
 @media (min-width: 760px) {
     .navbar-container {
         height: 50px;
-        padding: 10px 50px;
     }
 
     .navbar-container .logo {
@@ -133,8 +135,7 @@ body {
     .main-section {
             padding: 50px 80px;
         }
-    .navbar-container {
-        justify-content: space-around;
+                .navbar-container {
         height: 60px;
         padding: 10px 0;
     }

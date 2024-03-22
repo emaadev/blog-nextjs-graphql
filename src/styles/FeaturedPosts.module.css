@@ -141,12 +141,12 @@
 /* Media Queries */
 @media (min-width: 760px) {
     .postContainer {
-        width: 350px;
+        width: 500px;
     }
 }
 
 @media (min-width: 1200px) {
     .postContainer {
-        width: 400px;
+        width: 800px;
     }
 }
