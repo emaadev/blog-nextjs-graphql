@@ -117,6 +117,12 @@ This project showcases several notable achievements in web development using Nex
 
 -   Implemented a dedicated section for featured posts, where recent or highlighted posts are marked with a special indicator to signify their recency or importance.
 
+## Git Environment
+- main (production)
+    - develop (development)
+    
+For the development of the application, I used two main branches: 'Main' and 'Develop'. In the 'Develop' branch, I perform all the testing and development of new features. Once the code is clean and error-free, I use the 'git switch' command to change to the 'Main' branch and then perform a 'merge' to incorporate all the changes from the 'Develop' branch. This allows me to maintain an organized workflow and ensure that the 'Main' branch always contains a stable version of the project.
+
 ## Main Structure:
 - `src/`: Contains the Next.js main files (`src directory`).
 	- `pages/`: Contains the Next.js pages (e.g., `index.js`, `post/[slug].js`).
