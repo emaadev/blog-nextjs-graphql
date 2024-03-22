@@ -6,21 +6,23 @@ import Link from "next/link";
 import { BiSearchAlt } from "react-icons/bi";
 import styles from "@/styles/SearchBar.module.css";
 
+import { Post, PostNode } from "@/interfaces/data";
+
 interface SearchBarProps {
-  data: any;
+  data: PostNode[];
 }
 
 const SearchBar = ({ data }: SearchBarProps) => {
   const [searchPost, setSearchPost] = useState<string>("");
 
-  const handleSearch = (e: any) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchPost(e.target.value);
   };
 
   // Receive all the posts and then filter the lowercase titles
   // of each post and analyze if it includes the text that
   // is enter in lowercase through the input
-  const searchedPosts = data.filter((post: any) =>
+  const searchedPosts = data.filter((post: PostNode) =>
     post.node.title.toLowerCase().includes(searchPost.toLowerCase())
   );
 
@@ -39,7 +41,7 @@ const SearchBar = ({ data }: SearchBarProps) => {
       {searchPost !== "" && (
         <div className={styles.searchedPosts}>
           {searchedPosts.length > 0 ? (
-            searchedPosts.map((post: any) => (
+            searchedPosts.map((post: PostNode) => (
               <div key={post.node.id}>
                 <Link
                   href={`/post/${post.node.slug}`}

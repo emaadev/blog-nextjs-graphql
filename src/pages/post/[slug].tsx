@@ -11,7 +11,19 @@ import getRelativeTime from "@/lib/getRelativeTime";
 import { BsClock } from "react-icons/bs";
 import styles from "@/styles/PostPage.module.css";
 
-export default function PostPage({ post }: any) {
+import { Post } from "@/interfaces/data";
+
+interface PostPageProps {
+  post: Post;
+}
+
+interface StaticPropsParams {
+  params: {
+    slug: string;
+  };
+}
+
+export default function PostPage({ post }: PostPageProps) {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -88,7 +100,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps({ params }: StaticPropsParams) {
   const post = await getPostBySlug(params.slug);
 
   return {

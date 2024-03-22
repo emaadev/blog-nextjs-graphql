@@ -31,6 +31,11 @@ export interface Post {
   featuredPost: boolean;
 }
 
+// Interface for the first fetched data from CMS
+export interface PostNode {
+  node: Post;
+} 
+
 // Interface for PostList Pagination
 export interface PaginatedPost {
   id: string;
@@ -52,17 +57,15 @@ export interface Creator {
   name: string;
   username: string;
   profileImage: {
-    url: string
-  }
+    url: string;
+  };
   posts: {
-    filter: any;
-    map: any;
-    id: string
-    title: string
-    description: string
+    id: string;
+    title: string;
+    description: string;
     image: {
-      url: string
-    }
-    slug: string
-  }
+      url: string;
+    };
+    slug: string;
+  };
 }

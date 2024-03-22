@@ -4,10 +4,12 @@ import leftImage from "/public/left-hero-img.png";
 import rightImage from "/public/right-hero-img.png";
 
 import styles from "@/styles/Hero.module.css";
-import SearchBar from "./shared/SearchBar";
+import { SearchBar } from "@/components/";
+
+import { PostNode } from "@/interfaces/data";
 
 interface HeroProps {
-  data: any;
+  data: PostNode[];
 }
 
 const Hero = ({ data }: HeroProps) => {

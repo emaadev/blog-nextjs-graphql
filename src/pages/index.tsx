@@ -4,6 +4,7 @@ import { Montserrat } from "next/font/google";
 import { Hero, FeaturedPosts, PostList, Footer, Layout } from "@/components";
 
 import { getPosts } from "@/lib/getPosts";
+import { PostNode } from "@/interfaces/data";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -11,12 +12,12 @@ const montserrat = Montserrat({
 });
 
 interface HomeProps {
-  posts: any;
+  posts: PostNode[];
 }
 
 export default function Home({ posts }: HomeProps) {
   const featuredPosts = posts.filter(
-    (post: any) => post.node.featuredPost === true
+    (post: PostNode) => post.node.featuredPost === true
   );
 
   return (

@@ -4,9 +4,10 @@ import Link from "next/link";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 import styles from "@/styles/FeaturedPosts.module.css";
+import { Post } from "@/interfaces/data";
 
 interface TopicPostPros {
-  data: any;
+  data: Post;
 }
 
 const TopicPost = ({ data }: TopicPostPros) => {

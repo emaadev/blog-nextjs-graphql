@@ -256,7 +256,7 @@ Now, I can filter the `featuredPost` boolean value of each post and passed it to
 ```typescript
 export  default  function  Home({ posts }: HomeProps) {
 const  featuredPosts  =  posts.filter(
-	(post: any) =>  post.node.featuredPost  ===  true
+	(post: PostNode) =>  post.node.featuredPost  ===  true
 );
 
 return (
