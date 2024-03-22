@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
@@ -17,6 +18,13 @@ export default function PostPage({ post }: any) {
 
   return (
     <main className={styles.mainContainer}>
+      <Head>
+        <title>{post.title}</title>
+        <meta name="description" content={post.description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <Image
         src={post.image.url}
         alt={post.title}

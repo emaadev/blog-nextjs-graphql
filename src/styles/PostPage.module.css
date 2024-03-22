@@ -61,27 +61,66 @@
 .sectionContainer article h3 {
     font-size: 30px;
     font-weight: 600;
-    margin-bottom: 10px;
-}
-
+        margin-top: 10px;
+        }
+                                .sectionContainer article h4 {
+                                    font-size: 25px;
+                                    font-weight: 600;
+                                    margin-top: 10px;
+                                }
 .sectionContainer article>p {
-    font-size: 18px;
-    margin-bottom: 40px;
+    font-size: 16px;
+        margin-top: 30px;
     font-weight: 400;
 }
 
+.sectionContainer article p em {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.sectionContainer article div {
+    margin-top: 20px;
+}
 .sectionContainer article ol li {
-    margin-bottom: 30px;
+    font-size: 16px;
+        margin-top: 30px;
 }
 
 
-.sectionContainer article ol li::marker {
+.sectionContainer article ol li::marker,
+.sectionContainer article ul li::marker {
     color: #c7c7c7;
 }
 
 .sectionContainer article strong {
-    font-weight: 700;
-}
+    font-weight: 600;
+    }
+    
+    .sectionContainer pre {
+        background-color: #f8f8f8;
+        border: 1px solid #e1e1e8;
+        border-radius: 8px;
+        padding: 20px;
+        font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
+        font-size: 14px;
+        line-height: 1.5;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+    
+    .sectionContainer code {
+        background-color: #f8f8f8;
+        color: #333;
+    }
+    
+    .sectionContainer pre {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+    }
+
 .creatorSection {
     display: flex;
     justify-content: center;
