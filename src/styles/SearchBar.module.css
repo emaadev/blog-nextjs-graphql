@@ -24,6 +24,7 @@
     background-color: #fff;
     color: #7b7b7b;
     font-weight: 200;
+    border: none;
 }
 
 .searchBar>svg {
