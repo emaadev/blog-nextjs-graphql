@@ -23,6 +23,7 @@ export default function PostPage({ post }: any) {
         className={styles.postImage}
         width={1080}
         height={1080}
+        priority
       />
 
       <section className={styles.sectionContainer}>

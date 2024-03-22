@@ -25,6 +25,7 @@ const SearchBar = ({ data }: SearchBarProps) => {
     <div className={styles.searchBarContainer}>
       <BiSearchAlt />
       <input
+        id="searchBar"
         type="text"
         placeholder="Find the blog you are looking for..."
         className={styles.searchBar}

@@ -27,11 +27,13 @@ const Hero = ({ data }: HeroProps) => {
           src={leftImage}
           className={styles.leftImage}
           alt="Python, Node.js, PHP, Java, JavaScript"
+          priority
         />
         <Image
           src={rightImage}
           className={styles.rightImage}
           alt="React, Angular, Vue, Ruby on Rails, .NET Core"
+          priority
         />
       </div>
     </section>

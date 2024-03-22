@@ -15,18 +15,18 @@ const PostList = ({ data }: PostListProps) => {
   const [posts, setPosts] = useState(data.slice(0, 2));
   const [hasMore, setHasMore] = useState(true);
 
-  const fetchMorePosts = () => {
-    if (posts.length >= data.length) {
-      setHasMore(false);
-      return;
-    }
-
-    // There are 2 more posts only for show the InfiniteScroll
-    const newPosts = data.slice(posts.length, posts.length + 2);
-    setPosts([...posts, ...newPosts]);
-  };
-
   useEffect(() => {
+    const fetchMorePosts = () => {
+      if (posts.length >= data.length) {
+        setHasMore(false);
+        return;
+      }
+
+      // There are 2 more posts only for show the InfiniteScroll
+      const newPosts = data.slice(posts.length, posts.length + 2);
+      setPosts([...posts, ...newPosts]);
+    };
+
     // Every time the user use the scrollbar,
     // I look if the scroll is on the same place as the post list
     const handleScroll = () => {
@@ -42,7 +42,7 @@ const PostList = ({ data }: PostListProps) => {
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [posts]);
+  }, [data, posts]);
 
   return (
     <section id="allPosts" className="main-section">
