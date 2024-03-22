@@ -2,47 +2,63 @@
 import { useState, useEffect } from "react";
 
 import { PostCard, SectionTitle } from "@/components";
+import { getPaginatedPosts } from "@/lib/getPaginatedPosts";
 
 import { TbCardsFilled } from "react-icons/tb";
-import styles from "@/styles/PostList.module.css";
 import { CiNoWaitingSign } from "react-icons/ci";
+import styles from "@/styles/PostList.module.css";
 
-interface PostListProps {
-  data: any;
-}
+import { PaginatedPost } from "@/interfaces/data";
 
-const PostList = ({ data }: PostListProps) => {
-  const [posts, setPosts] = useState(data.slice(0, 2));
+const PostList = () => {
+  const [posts, setPosts] = useState<PaginatedPost[]>([]);
   const [hasMore, setHasMore] = useState(true);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    const fetchMorePosts = () => {
-      if (posts.length >= data.length) {
-        setHasMore(false);
-        return;
+    // Call the getPaginatedPosts function to get the paginated posts
+    const fetchMorePosts = async () => {
+      const newPostsEdges = await getPaginatedPosts(page, 2);
+      const newPosts = newPostsEdges.map(
+        (edge: { node: PaginatedPost }) => edge.node
+      );
+
+      // Reset the post in the first view,
+      // so that the assigned values are not repeated.
+      if (page === 1) {
+        setPosts(newPosts);
+      } else {
+        setPosts((prevPosts) => [...prevPosts, ...newPosts]);
       }
 
-      // There are 2 more posts only for show the InfiniteScroll
-      const newPosts = data.slice(posts.length, posts.length + 2);
-      setPosts([...posts, ...newPosts]);
+      // If the page is the first one,
+      // I don't fetch more posts until the user scroll
+      if (newPosts.length < 2) {
+        setHasMore(false);
+      }
     };
 
-    // Every time the user use the scrollbar,
-    // I look if the scroll is on the same place as the post list
+    fetchMorePosts();
+  }, [page]);
+
+  useEffect(() => {
+    // I evaluate the position of the ScrollBar,
+    // if it approaches the position in which this component is,
+    // then I increase to the following page
     const handleScroll = () => {
       const scrollTop = document.documentElement.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight;
       const clientHeight = document.documentElement.clientHeight;
 
-      if (scrollTop + clientHeight >= scrollHeight) {
-        fetchMorePosts();
+      if (scrollTop + clientHeight >= scrollHeight && hasMore) {
+        setPage((prevPage) => prevPage + 1);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [data, posts]);
+  }, [hasMore]);
 
   return (
     <section id="allPosts" className="main-section">
@@ -51,15 +67,15 @@ const PostList = ({ data }: PostListProps) => {
       </SectionTitle>
 
       <div className={styles.articleContainer}>
-        {posts.map((post: any) => (
-          <div key={post.node.id}>
+        {posts.map((post) => (
+          <div key={post.id}>
             <PostCard
-              image={post.node.image.url}
-              title={post.node.title}
-              description={post.node.description}
-              creator={post.node.creator.username}
-              postDate={post.node.createdAt}
-              slug={post.node.slug}
+              image={post.image.url}
+              title={post.title}
+              description={post.description}
+              creator={post.creator.username}
+              postDate={post.createdAt}
+              slug={post.slug}
             />
           </div>
         ))}

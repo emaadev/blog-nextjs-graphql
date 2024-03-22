@@ -29,3 +29,17 @@ export interface Post {
   };
   featuredPost: boolean;
 }
+
+export interface PaginatedPost {
+  id: string;
+  title: string;
+  description: string;
+  createdAt: string;
+  slug: string;
+  image: {
+    url: string;
+  };
+  creator: {
+    username: string;
+  };
+}
