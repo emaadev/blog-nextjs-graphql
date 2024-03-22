@@ -64,9 +64,8 @@ body {
 }
 
 .section-divider {
-    margin: auto;
     width: 70%;
-    margin: 50px;
+    margin: 50px auto;
 }
 /* SectionTitle Classes */
 .section-title__container {

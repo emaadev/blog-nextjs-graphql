@@ -55,7 +55,32 @@
 }
 
 .sectionContainer article {
+    font-family: "Montserrat";
     padding: 0 20px;
+}
+.sectionContainer article h3 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.sectionContainer article>p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.sectionContainer article ol li {
+    margin-bottom: 30px;
+}
+
+
+.sectionContainer article ol li::marker {
+    color: #c7c7c7;
+}
+
+.sectionContainer article strong {
+    font-weight: 700;
 }
 .creatorSection {
     display: flex;
