@@ -31,20 +31,11 @@ const CreatorPosts = ({ authorId, currentPostSlug }: CreatorPostsProps) => {
     const fetchAuthorPosts = async () => {
       const creator = await getCreatorById(authorId);
 
-      if (creator && creator.posts) {
-        // Filter posts to exclude the current post
+      if (creator && Array.isArray(creator.posts)) {
         const relatedPosts = creator.posts.filter(
           (post: CreatorPost) => post.slug !== currentPostSlug
         );
-
-        setPosts(
-          relatedPosts.map((post: CreatorPost) => ({
-            id: post.id,
-            title: post.title,
-            slug: post.slug,
-            image: post.image,
-          }))
-        );
+        setPosts(relatedPosts);
       }
     };
 
