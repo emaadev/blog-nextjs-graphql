@@ -1,8 +1,9 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Link from "next/link";
 
-import { CreatorPosts, Layout } from "@/components";
+import { CreatorPosts, Layout, Loading } from "@/components";
 
 import { getPostBySlug } from "@/lib/getPostBySlug";
 import { getAllPostsBySlugs } from "@/lib/getAllPostsBySlugs";
@@ -27,7 +28,7 @@ export default function PostPage({ post }: PostPageProps) {
   const router = useRouter();
 
   if (router.isFallback) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (
@@ -50,6 +51,8 @@ export default function PostPage({ post }: PostPageProps) {
         />
 
         <section className={styles.sectionContainer}>
+          <Link href="/">← Return to Home</Link>
+
           <div className={styles.postDate}>
             <span>Publication Date</span> <BsClock />{" "}
             <span>{getRelativeTime(post.publicationDate)}</span>

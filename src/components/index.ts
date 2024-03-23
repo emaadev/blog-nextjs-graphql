@@ -10,6 +10,7 @@ import SectionTitle from "./shared/SectionTitle";
 import PostCard from "./shared/PostCard";
 import SearchBar from "./shared/SearchBar";
 import CreatorPosts from "./shared/CreatorPosts";
+import Loading from "./shared/Loading";
 
 export {
   Navbar,
@@ -23,4 +24,5 @@ export {
   SearchBar,
   CreatorPosts,
   Layout,
+  Loading,
 };

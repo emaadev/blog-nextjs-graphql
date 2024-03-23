@@ -39,6 +39,7 @@ export default function Home({ posts }: HomeProps) {
   );
 }
 
+// Fecth the posts and pass it to Home App via StaticProps
 export async function getStaticProps() {
   const posts = await getPosts();
 

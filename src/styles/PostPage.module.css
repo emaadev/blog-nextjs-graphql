@@ -43,6 +43,19 @@
     text-align: center;
 }
 
+.sectionContainer>a {
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 15px;
+    transition: all .5s;
+
+    color: rgb(39, 113, 197);
+}
+
+.sectionContainer>a:hover {
+    text-decoration: underline;
+    opacity: .8;
+}
 .sectionContainer .date {
     font-size: 14px;
     color: #000;
@@ -63,11 +76,11 @@
     font-weight: 600;
         margin-top: 10px;
         }
-                                .sectionContainer article h4 {
-                                    font-size: 25px;
-                                    font-weight: 600;
-                                    margin-top: 10px;
-                                }
+.sectionContainer article h4 {
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 10px;
+}
 .sectionContainer article>p {
     font-size: 16px;
         margin-top: 30px;

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-import { PostCard, SectionTitle } from "@/components";
+import { Loading, PostCard, SectionTitle } from "@/components";
 import { getPaginatedPosts } from "@/lib/getPaginatedPosts";
 
 import { TbCardsFilled } from "react-icons/tb";
@@ -14,27 +14,36 @@ const PostList = () => {
   const [posts, setPosts] = useState<PaginatedPost[]>([]);
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    // Call the getPaginatedPosts function to get the paginated posts
     const fetchMorePosts = async () => {
-      const newPostsEdges = await getPaginatedPosts(page, 2);
-      const newPosts = newPostsEdges.map(
-        (edge: { node: PaginatedPost }) => edge.node
-      );
+      setIsLoading(true);
 
-      // Reset the post in the first view,
-      // so that the assigned values are not repeated.
-      if (page === 1) {
-        setPosts(newPosts);
-      } else {
-        setPosts((prevPosts) => [...prevPosts, ...newPosts]);
-      }
+      try {
+        // Call the getPaginatedPosts function to get the paginated posts
+        const newPostsEdges = await getPaginatedPosts(page, 2);
+        const newPosts = newPostsEdges.map(
+          (edge: { node: PaginatedPost }) => edge.node
+        );
 
-      // If the page is the first one,
-      // I don't fetch more posts until the user scroll
-      if (newPosts.length < 2) {
-        setHasMore(false);
+        // Reset the post in the first view,
+        // so that the assigned values are not repeated.
+        if (page === 1) {
+          setPosts(newPosts);
+        } else {
+          setPosts((prevPosts) => [...prevPosts, ...newPosts]);
+        }
+
+        // If the page is the first one,
+        // I don't fetch more posts until the user scroll
+        if (newPosts.length < 2) {
+          setHasMore(false);
+        }
+      } catch (error) {
+        console.log("Error fetching posts:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -80,6 +89,8 @@ const PostList = () => {
           </div>
         ))}
       </div>
+
+      {isLoading && <Loading />}
 
       {!hasMore && (
         <div className={styles.noResults}>

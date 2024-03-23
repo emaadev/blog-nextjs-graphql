@@ -25,7 +25,13 @@ const PostCard = ({
 }: PostCardProps) => {
   return (
     <div className={styles.postContainer}>
-      <Image src={image} alt={title} width={1080} height={1080} />
+      <Image
+        src={image}
+        alt={title}
+        width={1080}
+        height={1080}
+        loading="lazy"
+      />
 
       <div className={styles.creatorContainer}>
         <span className={styles.creator}>@{creator}</span> <BsClock />{" "}
